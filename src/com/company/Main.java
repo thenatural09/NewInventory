@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         HashMap<String, ArrayList<Item>> users = new HashMap<>();
 //        ArrayList<Item> items = new ArrayList<>();\
 
@@ -21,20 +21,6 @@ public class Main {
                 users.put(userName,items);
             }
 
-
-//            Item item = new Item("bow", 1);
-//            Item item2 = new Item("arrows", 15);
-//            Item item3 = new Item("people", 10);
-//            items.add(item);
-//            items.add(item2);
-//            items.add(item3);
-//            for(int j = 0; j > items.size(); j++) {
-//                Item item0 = items.get(j);
-//                int numb = j + 1;
-//                System.out.printf("%s. [%s] %s\n", numb, item0.quantity, item0.itemName);
-//
-//            }
-
             boolean keepRunning = true;
             while (keepRunning) {
                 System.out.println("[1] Create new item");
@@ -47,8 +33,8 @@ public class Main {
                     case "1":
                         System.out.println("Enter new item");
                         String newItem = scanner.nextLine();
-                        Item item4 = new Item(newItem, 0);
-                        items.add(item4);
+                        Item i1 = createItem(newItem);
+                        items.add(i1);
                         break;
                     case "2":
                         System.out.println("Select an item to remove");
@@ -90,5 +76,28 @@ public class Main {
                 }
             }
         }
+    }
+
+    static Item createItem(String itemName) throws Exception {
+        Item item;
+        if(itemName.equalsIgnoreCase("bow")) {
+            item = new Bow();
+        }
+        else if(itemName.equalsIgnoreCase("sword")) {
+            item = new Sword();
+        }
+        else if(itemName.equalsIgnoreCase("armor")) {
+            item = new Armor();
+        }
+        else if(itemName.equalsIgnoreCase("helmet")) {
+            item = new Helmet();
+        }
+        else if(itemName.equalsIgnoreCase("arrow")) {
+            item = new Arrow();
+        }
+        else {
+            throw new Exception("Invalid Item");
+        }
+        return item;
     }
 }
