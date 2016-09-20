@@ -10,9 +10,8 @@ public class Main {
     public static void main(String[] args) {
         HashMap<String, ArrayList<Item>> users = new HashMap<>();
 //        ArrayList<Item> items = new ArrayList<>();\
-        boolean mainMenu = true;
 
-        while (mainMenu) {
+        while (true) {
             System.out.println("Enter new name");
             String name = scanner.nextLine();
             ArrayList<Item> items = new ArrayList<>();
@@ -77,13 +76,13 @@ public class Main {
                         }
                         break;
                     case "5":
-                        keepRunning = false;
+                       keepRunning = false;
+
                         break;
                     default:
                         System.out.println("Invalid response");
                 }
             }
         }
-
     }
 }
