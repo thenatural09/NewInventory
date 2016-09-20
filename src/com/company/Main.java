@@ -9,8 +9,6 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         HashMap<String, ArrayList<Item>> users = new HashMap<>();
-//        ArrayList<Item> items = new ArrayList<>();\
-
 
         while (true) {
             System.out.println("Enter new name");
@@ -33,7 +31,9 @@ public class Main {
                     case "1":
                         System.out.println("Enter new item");
                         String newItem = scanner.nextLine();
-                        Item i1 = createItem(newItem);
+                        System.out.println("Enter new item quantity");
+                        int newQuantity = Integer.valueOf(scanner.nextLine());
+                        Item i1 = createItem(newItem,newQuantity);
                         items.add(i1);
                         break;
                     case "2":
@@ -48,23 +48,12 @@ public class Main {
                         System.out.println("What quantity does the item have?");
                         int itemQuantity = Integer.valueOf(scanner.nextLine());
                         items.get(quantityIndex - 1).quantity = itemQuantity;
-//                        newItem = scanner.nextLine();
-//
-////                        System.out.println("Enter new quantity");
-////                        int newQuantity = Integer.valueOf(scanner.nextLine());
-////                        Item item6 = new Item(itemName, newQuantity);
-////                        items.add(item6);
-//                        System.out.println("Enter new quantity");
-//                        String enteredNewQuantity = scanner.nextLine();
-//                        item4 = new Item(newItem, Integer.valueOf(enteredNewQuantity));
-//                        items.add(item4);
-
                         break;
                     case "4":
                         for (int i = 0; i < items.size(); i++) {
                             Item item7 = items.get(i);
                             int numb = i + 1;
-                            System.out.printf("%s. [%s] %s\n", numb, item7.quantity, item7.itemName);
+                            System.out.printf("%s. [%s] %s ... Category: %s\n", numb, item7.quantity, item7.itemName, item7.category);
                         }
                         break;
                     case "5":
@@ -78,22 +67,22 @@ public class Main {
         }
     }
 
-    static Item createItem(String itemName) throws Exception {
+    static Item createItem(String itemName,int itemQuantity) throws Exception {
         Item item;
-        if(itemName.equalsIgnoreCase("bow")) {
-            item = new Bow();
+        if(itemName.contains("bow")) {
+            item = new Bow(itemName,itemQuantity);
         }
-        else if(itemName.equalsIgnoreCase("sword")) {
-            item = new Sword();
+        else if(itemName.contains("sword")) {
+            item = new Sword(itemName,itemQuantity);
         }
-        else if(itemName.equalsIgnoreCase("armor")) {
-            item = new Armor();
+        else if(itemName.contains("armor")) {
+            item = new Armor(itemName,itemQuantity);
         }
-        else if(itemName.equalsIgnoreCase("helmet")) {
-            item = new Helmet();
+        else if(itemName.contains("helmet")) {
+            item = new Helmet(itemName,itemQuantity);
         }
-        else if(itemName.equalsIgnoreCase("arrow")) {
-            item = new Arrow();
+        else if(itemName.contains("arrow")) {
+            item = new Arrow(itemName,itemQuantity);
         }
         else {
             throw new Exception("Invalid Item");

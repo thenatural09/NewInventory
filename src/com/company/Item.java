@@ -6,13 +6,8 @@ package com.company;
 public class Item {
     String itemName;
     int quantity;
+    String category;
 
     public Item () {
-
-    }
-
-    public Item(String itemName, int quantity) {
-        this.itemName = itemName;
-        this.quantity = quantity;
     }
 }
