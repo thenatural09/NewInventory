@@ -67,18 +67,22 @@ public class Main {
                     case "3":
                         System.out.println("Select an item to change quantity");
                         itemNumber = Integer.valueOf(scanner.nextLine());
-                        if (items.contains(itemNumber)) {
-                            System.out.println("Enter new quantity");
-                            int newQuantity = Integer.valueOf(scanner.nextLine());
-                            Item item6 = new Item("helpme", newQuantity);
-                            items.add(item6);
-                        }
+                        System.out.println("Enter new quantity");
+                        int newQuantity = Integer.valueOf(scanner.nextLine());
+                        Item item6 = new Item(itemNumber, newQuantity)
+
+
+//                        if (items.contains(itemNumber)) {
+//                            System.out.println("Enter new quantity");
+//                            int newQuantity = Integer.valueOf(scanner.nextLine());
+//
+//                        }
                         break;
                     case "4":
                         for (int i = 0; i < items.size(); i++) {
                             Item item7 = items.get(i);
                             int numb = i + 1;
-                            System.out.printf("%s. [%s] %s\n", numb, item7.quantity, item7.text);
+                            System.out.printf("%s. [%s] %s\n", numb, item7.quantity, item7.itemName);
                         }
                         break;
                     case "5":
