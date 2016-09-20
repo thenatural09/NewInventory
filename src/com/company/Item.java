@@ -4,15 +4,15 @@ package com.company;
  * Created by Troy on 9/19/16.
  */
 public class Item {
-    String name;
+    String text;
     int quantity;
 
     public String getName() {
-        return name;
+        return text;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.text = name;
     }
 
     public int getQuantity() {
@@ -23,8 +23,8 @@ public class Item {
         this.quantity = quantity;
     }
 
-    public Item(String name, int quantity) {
-        this.name = name;
+    public Item(String text, int quantity) {
+        this.text = text;
         this.quantity = quantity;
 
 
