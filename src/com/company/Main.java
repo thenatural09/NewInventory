@@ -24,24 +24,33 @@ public class Main {
             Item item = new Item("bow", 1);
             Item item2 = new Item("arrows", 15);
             Item item3 = new Item("people", 10);
-            item.getName();
-            item.getQuantity();
             items.add(item);
-            item2.getName();
-            item2.getQuantity();
             items.add(item2);
-            item3.getName();
-            item3.getQuantity();
             items.add(item3);
-            String selectedItemName = items.get(0).getName();
-            int quantityOfItem = items.get(0).getQuantity();
-            String selectedItemName2 = items.get(1).getName();
-            int quantityOfItem2 = items.get(1).getQuantity();
-            String selectedItemName3 = items.get(2).getName();
-            int quantityOfItem3 = items.get(2).getQuantity();
-            System.out.printf("1. [%s] %s\n", quantityOfItem, selectedItemName);
-            System.out.printf("2. [%s] %s\n", quantityOfItem2, selectedItemName2);
-            System.out.printf("3. [%s] %s\n", quantityOfItem3, selectedItemName3);
+            for(int j = 0; j > items.size(); j++) {
+                Item item0 = items.get(j);
+                int numb = j + 1;
+                System.out.printf("%s. [%s] %s\n", numb, item0.quantity, item0.itemName);
+
+            }
+//            item.getName();
+//            item.getQuantity();
+//            items.add(item);
+//            item2.getName();
+//            item2.getQuantity();
+//            items.add(item2);
+//            item3.getName();
+//            item3.getQuantity();
+//            items.add(item3);
+//            String selectedItemName = items.get(0).getName();
+//            int quantityOfItem = items.get(0).getQuantity();
+//            String selectedItemName2 = items.get(1).getName();
+//            int quantityOfItem2 = items.get(1).getQuantity();
+//            String selectedItemName3 = items.get(2).getName();
+//            int quantityOfItem3 = items.get(2).getQuantity();
+//            System.out.printf("1. [%s] %s\n", quantityOfItem, selectedItemName);
+//            System.out.printf("2. [%s] %s\n", quantityOfItem2, selectedItemName2);
+//            System.out.printf("3. [%s] %s\n", quantityOfItem3, selectedItemName3);
 
             boolean keepRunning = true;
             while (keepRunning) {
