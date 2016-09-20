@@ -11,6 +11,7 @@ public class Main {
         HashMap<String, ArrayList<Item>> users = new HashMap<>();
 //        ArrayList<Item> items = new ArrayList<>();\
 
+
         while (true) {
             System.out.println("Enter new name");
             String userName = scanner.nextLine();
@@ -74,17 +75,21 @@ public class Main {
                         items.remove(item5);
                         break;
                     case "3":
-                        System.out.println("Type item name to change quantity");
-                        newItem = scanner.nextLine();
-
+                        System.out.println("Type item number to change quantity");
+                        int quantityIndex = Integer.valueOf(scanner.nextLine());
+                        System.out.println("What quantity does the item have?");
+                        int itemQuantity = Integer.valueOf(scanner.nextLine());
+                        items.get(quantityIndex - 1).quantity = itemQuantity;
+//                        newItem = scanner.nextLine();
+//
+////                        System.out.println("Enter new quantity");
+////                        int newQuantity = Integer.valueOf(scanner.nextLine());
+////                        Item item6 = new Item(itemName, newQuantity);
+////                        items.add(item6);
 //                        System.out.println("Enter new quantity");
-//                        int newQuantity = Integer.valueOf(scanner.nextLine());
-//                        Item item6 = new Item(itemName, newQuantity);
-//                        items.add(item6);
-                        System.out.println("Enter new quantity");
-                        String enteredNewQuantity = scanner.nextLine();
-                        item4 = new Item(newItem, Integer.valueOf(enteredNewQuantity));
-                        items.add(item4);
+//                        String enteredNewQuantity = scanner.nextLine();
+//                        item4 = new Item(newItem, Integer.valueOf(enteredNewQuantity));
+//                        items.add(item4);
 
                         break;
                     case "4":
