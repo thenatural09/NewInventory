@@ -66,7 +66,8 @@ public class Main {
                         itemNumber = Integer.valueOf(scanner.nextLine());
                         System.out.println("Enter new quantity");
                         int newQuantity = Integer.valueOf(scanner.nextLine());
-                        Item item6 = new Item("help", newQuantity);
+                        Item item6 = new Item(name, newQuantity);
+                        items.add(item6);
                         break;
                     case "4":
                         for (int i = 0; i < items.size(); i++) {
