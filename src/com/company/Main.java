@@ -65,19 +65,18 @@ public class Main {
                         items.remove(item5);
                         break;
                     case "3":
-                        System.out.println("Select an item to change quantity");
-                        itemNumber = Integer.valueOf(scanner.nextLine());
+                        System.out.println("Type item name to change quantity");
+                        newItem = scanner.nextLine();
+
+//                        System.out.println("Enter new quantity");
+//                        int newQuantity = Integer.valueOf(scanner.nextLine());
+//                        Item item6 = new Item(itemName, newQuantity);
+//                        items.add(item6);
                         System.out.println("Enter new quantity");
-                        int newQuantity = Integer.valueOf(scanner.nextLine());
-                        Item item6 = new Item(itemName, newQuantity);
-                        items.add(item6);
+                        String enteredNewQuantity = scanner.nextLine();
+                        item4 = new Item(newItem, Integer.valueOf(enteredNewQuantity));
+                        items.add(item4);
 
-
-//                        if (items.contains(itemNumber)) {
-//                            System.out.println("Enter new quantity");
-//                            int newQuantity = Integer.valueOf(scanner.nextLine());
-//
-//                        }
                         break;
                     case "4":
                         for (int i = 0; i < items.size(); i++) {
