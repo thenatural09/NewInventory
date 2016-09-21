@@ -39,8 +39,8 @@ public class Main {
                     case "2":
                         System.out.println("Select an item to remove");
                         int itemNumber = Integer.valueOf(scanner.nextLine());
-                        Item item5 = items.get(itemNumber - 1);
-                        items.remove(item5);
+                        Item i2 = items.get(itemNumber - 1);
+                        items.remove(i2);
                         break;
                     case "3":
                         System.out.println("Type item number to change quantity");
@@ -51,9 +51,9 @@ public class Main {
                         break;
                     case "4":
                         for (int i = 0; i < items.size(); i++) {
-                            Item item7 = items.get(i);
+                            Item i4 = items.get(i);
                             int numb = i + 1;
-                            System.out.printf("%s. [%s] %s ... Category: %s\n", numb, item7.quantity, item7.itemName, item7.category);
+                            System.out.printf("%s. [%s] %s ... Category: %s\n", numb, i4.quantity, i4.itemName, i4.category);
                         }
                         break;
                     case "5":
